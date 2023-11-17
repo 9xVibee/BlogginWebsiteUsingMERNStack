@@ -21,7 +21,6 @@ const usePreviewingImg = () => {
       setImgUrl(null);
     }
   };
-  console.log(imgUrl);
   return { handleImageChange, imgUrl, setImgUrl };
 };
 

@@ -8,6 +8,7 @@ import { v2 as cloudinary } from "cloudinary";
 
 // importing routes
 import userRoutes from "./routes/userRoutes.js";
+import blogRoutes from "./routes/blogRoutes.js";
 import googleRoute from "./routes/googleRoute.js";
 
 // using the express
@@ -28,6 +29,7 @@ dotenv.config();
 
 // signup route
 app.use("/users", userRoutes);
+app.use("/blog", blogRoutes);
 app.use("/google-auth", googleRoute);
 
 // calling the database

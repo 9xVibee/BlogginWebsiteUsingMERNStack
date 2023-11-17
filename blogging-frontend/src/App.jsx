@@ -19,6 +19,7 @@ const App = () => {
   }, []);
 
   return (
+    // Any component which is inside the context provider will have access to the context values
     <UserContext.Provider value={{ userAuth, setUserAuth }}>
       <Routes>
         <Route path="/editor" element={<Editor />} />
