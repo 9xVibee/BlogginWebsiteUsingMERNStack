@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react";
-import { Link, Outlet } from "react-router-dom";
+import { Link, Outlet, useNavigate } from "react-router-dom";
 
 import { AiOutlineSearch } from "react-icons/ai";
 import { LuFileEdit } from "react-icons/lu";
@@ -12,6 +12,7 @@ import UserNavigationPanel from "./user-navigation.component";
 const Navbar = () => {
   const [searchBarVisibility, setSearchBarVisibility] = useState(false);
   const [showUserPanel, setShowUserPanel] = useState(false);
+  const navigate = useNavigate();
 
   const {
     userAuth,
@@ -26,6 +27,16 @@ const Navbar = () => {
     setTimeout(() => {
       setShowUserPanel(false);
     }, 200);
+  };
+
+  // handling search and navigating to search/query
+  const handleSearchFunction = (e) => {
+    let query = e.target.value;
+    console.log(query);
+    
+    if (e.keyCode === 13 && query.length) {
+      navigate(`/search/${query}`);
+    }
   };
   return (
     <>
@@ -44,6 +55,7 @@ const Navbar = () => {
             type="text"
             placeholder="Search"
             className="w-full md:w-auto bg-grey p-4 pl-6 pr-[12%] md:pr-6 rounded-md placeholder:text-dark-grey md:pl-14"
+            onKeyDown={handleSearchFunction}
           />
 
           <AiOutlineSearch

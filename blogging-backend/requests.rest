@@ -9,16 +9,23 @@
 #     "password": "2312aA"
 # }
 
-POST http://localhost:3000/blog/create
+# POST http://localhost:3000/blog/create
+# Content-Type: application/json
+# Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1NTU3YTEyZjVkNzA2Njk0OGMxMmY0OCIsImlhdCI6MTcwMDEwMDYyNn0.PYzXXQwpb4fq93fx8j2ZMXUi5FEppzlnN9BS_9BDWQY
+
+# {
+#     "title" : "test title",
+#     "banner" : "https//example",
+#     "des":"this is des",
+#     "content":{
+#         "blocks":[1, 2]
+#     },
+#     "tags":["tag!"]
+# }
+
+POST  http://localhost:3000/blog/search-blogs
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1NTU3YTEyZjVkNzA2Njk0OGMxMmY0OCIsImlhdCI6MTcwMDEwMDYyNn0.PYzXXQwpb4fq93fx8j2ZMXUi5FEppzlnN9BS_9BDWQY
 
 {
-    "title" : "test title",
-    "banner" : "https//example",
-    "des":"this is des",
-    "content":{
-        "blocks":[1, 2]
-    },
-    "tags":["tag!"]
+    "tag" : "movie"
 }
