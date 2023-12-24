@@ -33,7 +33,7 @@ const Navbar = () => {
   const handleSearchFunction = (e) => {
     let query = e.target.value;
     console.log(query);
-    
+
     if (e.keyCode === 13 && query.length) {
       navigate(`/search/${query}`);
     }

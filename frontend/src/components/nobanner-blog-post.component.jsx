@@ -12,7 +12,7 @@ const MinimalBlogPost = ({ blog, index }) => {
   } = blog;
   return (
     <Link to={`/blog/${id}`} className="flex gap-5 mb-10">
-      <h1 className="blog-index">{index < 10 ? "0" + (index + 1) : index}</h1>
+      <h1 className="blog-index text-[4.5rem]">{index < 10 ? "0" + (index + 1) : index}</h1>
 
       <div>
         <div className="flex gap-2 items-center mb-3">
@@ -22,7 +22,7 @@ const MinimalBlogPost = ({ blog, index }) => {
           </p>
           <p className="min-w-fit">{getDay(publishedAt) + " publishedAt"}</p>
         </div>
-        <h1 className="blog-title">{title}</h1>
+        <h1 className="blog-title text-2xl line-clamp-1">{title}</h1>
       </div>
     </Link>
   );

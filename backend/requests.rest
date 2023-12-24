@@ -23,9 +23,34 @@
 #     "tags":["tag!"]
 # }
 
-POST  http://localhost:3000/blog/search-blogs
+# POST  http://localhost:3000/blog/search-blogs
+# Content-Type: application/json
+
+# {
+#     "tag" : "movie"
+# }
+
+# Getting user by search
+# POST  http://localhost:3000/users/searchuser
+# Content-Type: application/json
+
+# {
+#     "query" : "abh"
+# }
+
+# Getting user profile
+
+
+POST  http://localhost:3000/blog/get-blog
 Content-Type: application/json
 
 {
-    "tag" : "movie"
+    "blog_id" : "BURNING-VILLAGEG6-lYd5vM5VJFb5abG2IF"
 }
+
+# POST  http://localhost:3000/users/getprofile
+# Content-Type: application/json
+
+# {
+#     "userId" : "abhxyy"
+# }

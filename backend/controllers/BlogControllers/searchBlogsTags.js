@@ -1,7 +1,7 @@
 import Blog from "../../Schema/Blog.js";
 
 const searchBlogsTags = (req, res) => {
-  let { tag, page, query } = req.body;
+  let { tag, page, query, author } = req.body;
   let findQuery;
 
   if (tag) findQuery = { tags: tag, draft: false };
@@ -10,7 +10,12 @@ const searchBlogsTags = (req, res) => {
       draft: false,
       title: new RegExp(query, "i"),
     };
-
+  else if (author) {
+    findQuery = {
+      author,
+      draft: false,
+    };
+  }
   try {
     let maxLimit = 5;
 

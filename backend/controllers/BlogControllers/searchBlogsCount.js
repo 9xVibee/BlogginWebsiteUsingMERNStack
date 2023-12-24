@@ -2,7 +2,7 @@ import Blog from "../../Schema/Blog.js";
 
 const searchBlogsCount = (req, res) => {
   let { data_to_send } = req.body;
-  let { tag, query } = data_to_send;
+  let { tag, query, author } = data_to_send;
   let findQuery;
 
   if (tag) findQuery = { tags: tag, draft: false };
@@ -11,7 +11,13 @@ const searchBlogsCount = (req, res) => {
       title: new RegExp(query, "i"),
       draft: false,
     };
-
+  else if (author) {
+    findQuery = {
+      author,
+      draft: false,
+    };
+  }
+  console.log("hmm");
   Blog.countDocuments(findQuery)
     .then((count) => {
       console.log(count);
